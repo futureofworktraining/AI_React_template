@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Porównanie Modeli AI</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+  }
+
+  h2 {
+    color: #212529;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.8em;
+    font-weight: 600;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: white;
+  }
+
+  th, td {
+    border: 1px solid #dee2e6;
+    padding: 14px 18px;
+    text-align: center;
+     font-size: 1.1em;
+  }
+
+  th {
+    background-color: #343a40; /* Default header color */
+    color: #f8f9fa;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+  }
+  /* Override for specific header columns */
+    th.gemini, th.deepseek, th.openai, th.o3mini{
+         background-color: #343a40;
+    }
+
+
+   tr:nth-child(even) {
+        background-color: #f1f3f5;
+    }
+
+  tr:hover {
+    background-color: #ced4da;
+    transition: background-color 0.2s ease-in-out;
+  }
+  .openai {
+    background-color: #e7e7b9; /* Keeping original colors for these */
+  }
+  .deepseek {
+    background-color: #e8d4ff;
+  }
+  .o3mini {
+    background-color: #b3ffd9;
+  }
+
+  .highlight {
+    font-weight: bold;
+    color: #0056b3;
+    font-size: 1.2em;
+  }
+
+   /* Remove highlight2, as it's no longer needed for Gemini */
+
+  .empty {
+    color: #6c757d;
+  }
+</style>
+</head>
+<body>
+
+<h2>Porównanie Modeli AI</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Benchmark</th>
+      <th class="gemini">Gemini 2.0 Flash Thinking EXP 01-21</th>
+      <th class="deepseek">DeepSeek-R1</th>
+      <th class="openai">OpenAI-o1-1217</th>
+       <th class="openai">OpenAI-o1-mini</th>
+       <th class="o3mini">o3-mini high</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AIME 2024 (Math)</td>
+      <td>73.3%</td>  <!-- No highlight class -->
+      <td>79.8</td>
+      <td>79.2</td>
+        <td>63.6</td>
+        <td><span class="highlight">87.3%</span></td>
+    </tr>
+    <tr>
+      <td>GPQA Diamond (Science)</td>
+      <td >74.2%</td> <!-- No highlight class -->
+        <td>71.5</td>
+      <td><span class ="highlight">75.7</span></td>
+      <td>60.0</td>
+       <td>79.7%</td>
+    </tr>
+    <tr>
+      <td>MMMU (Multimodal reasoning)</td>
+      <td>75.4%</td> <!-- No highlight class -->
+      <td class="empty">-</td>
+      <td class="empty">-</td>
+        <td class="empty">-</td>
+         <td class="empty">-</td>
+    </tr>
+
+  </tbody>
+</table>
+
+</body>
+</html>
